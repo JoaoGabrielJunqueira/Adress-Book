@@ -6,10 +6,14 @@ int DetectaSistemaOperacional()
 /*Se o SO for Linux retorna 0, caso seja Windows retorna 1. 
   Usada para casos de definição de métodos exclusivos do SO como system("cls") no Windows ou system("clear") no Linux.*/
 {
-	#ifdef __linux__
+	#ifdef __APPLE__
+		return 0;
+	#elif defined __linux__
 		return 0;
 	#elif defined WIN32
 		return 1;
+	#else
+		return 2;
 	#endif
 }
 
